@@ -1,8 +1,12 @@
 # Jeux_Echecs
 Développeurs:
+
 BOUREK Kamel
 TRAORE Mohamed
 Lys Ciella Niteka.
+
+
+
 ***Introduction***
 
 L'objectif de ce projet est de réaliser un jeu d'échecs en JavaScript. On rappelle que ce jeu se déroule sur un échiquier de 8 cases par 8 cases, alternant cases grises et cases blanches. Deux joueurs humains (on ne s'intéressera pas pour le moment à la réalisation d'une éventuelle intelligence artificielle), chacun d'entre eux doté de 8 pièces et 8 pions, s'affrontent sur cet échiquier. Chacun dispose d'un roi, et l'objectif pour son adversaire est de le mettre en échec et mat. Les déplacements se feront avec des cliques case départ et cliques case arrivée.
