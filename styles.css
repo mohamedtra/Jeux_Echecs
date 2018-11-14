@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'cheq7';
+    src: url('Chess-7.TTF') format('truetype');
+}
+
+#échiquier{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+td[data-couleur=blanc]{
+	background-color: rgb(214,208,201);
+	
+}
+
+td[data-couleur=noir]{
+	background-color: rgb(87,79,95);
+	
+}
+
+#piece_B_mangee , #piece_N_mangee {
+	height: 24px;
+	width: 400px;
+	border-radius: 2px;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	margin: auto;
+
+}
+
+#piece_N_mangee{
+	background-color:  rgb(214,208,201);
+}
+
+#piece_B_mangee{
+	background-color: rgb(87,79,95);
+}
+
+main {
+	width: 600px;
+	margin: auto;
+	
+}
+
+h1{
+	text-align: center;
+}
+
+body{
+	background-color: #DCDCDC;	
+}
+
+table#échiquier{
+	border: 10px solid rgb(195,142,121);
+}
+
+
+

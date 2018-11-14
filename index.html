@@ -1,0 +1,47 @@
+<!Doctype html>
+<html lang="fr">
+    <head>
+        <title>Titan Echecs</title>
+        <link rel="shortcut icon" type="image/x-icon" href="cavalier.ico" />
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <script src="script.js"></script>
+        
+    </head>
+    <body>
+        <main>
+            <link rel="stylesheet" type="text/css" href="styles.css">  
+            <h1 class="titre">Titan Echecs</h1><br>
+            <button type="button" id="newgame">Nouvelle Partie</button>
+            <p id="alerte"></p>
+            <label>Joueur 2 : </label>
+            <div id="piece_B_mangee"></div>
+            <table summary="échiquier" id="échiquier" border="0">
+            </table>
+
+            <div id="piece_N_mangee"></div>
+            <label>Joueur 1 :</label>
+
+            <ul>
+                <li>Les déplacements peuvent être effectués en cliquant sur la pièce de départ puis sur la case d'arrivée.</li>
+                <li>Les pions traînés au dernier rang sont promus au pion de votre choix. Utilisez la liste déroulante en bas à gauche de votre interface pour le définir.</li>
+
+            </ul>
+            <h3>Promotion des Pions</h3>
+            <select>
+                <option value="D">Dame</option>
+                <option value="C">Cavalier</option>
+                <option value="T">Tour</option>
+                <option value="F">Fou</option>
+            </select>
+        </main>
+        <script>
+            var echiquier;
+
+            window.addEventListener('DOMContentLoaded', (e)=>{
+                echiquier = new Echiquier();
+                echiquier.afficher("échiquier");
+            
+            })
+        </script><br><br>
+    </body>        
+</html>
