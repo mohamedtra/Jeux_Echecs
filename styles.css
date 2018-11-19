@@ -18,6 +18,15 @@ td[data-couleur=noir]{
 	
 }
 
+.piece{
+	font-family: 'cheq7';
+	font-size: 40px;
+}
+
+[data-span-piece-couleur="B"]{
+	color: white;
+}
+
 #piece_B_mangee , #piece_N_mangee {
 	height: 24px;
 	width: 400px;
@@ -37,6 +46,11 @@ td[data-couleur=noir]{
 	background-color: rgb(87,79,95);
 }
 
+i.fa.fa-trophy{
+	font-size: 30px;
+	color: #CD853F;
+}
+
 main {
 	width: 600px;
 	margin: auto;
@@ -54,6 +68,7 @@ body{
 table#échiquier{
 	border: 10px solid rgb(195,142,121);
 }
+
 
 
 

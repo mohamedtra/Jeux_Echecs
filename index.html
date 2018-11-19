@@ -10,17 +10,19 @@
     <body>
         <main>
             <link rel="stylesheet" type="text/css" href="styles.css">  
+            <link rel="stylesheet" href="./font-awesome-4.7.0\css/font-awesome.min.css">   
             <h1 class="titre">Titan Echecs</h1><br>
             <button type="button" id="newgame">Nouvelle Partie</button>
             <p id="alerte"></p>
             <label>Joueur 2 : </label>
+            <i class="fa fa-trophy" aria-hidden="true"></i>
             <div id="piece_B_mangee"></div>
             <table summary="échiquier" id="échiquier" border="0">
             </table>
 
             <div id="piece_N_mangee"></div>
             <label>Joueur 1 :</label>
-
+            <i class="fa fa-trophy" aria-hidden="true"></i>
             <ul>
                 <li>Les déplacements peuvent être effectués en cliquant sur la pièce de départ puis sur la case d'arrivée.</li>
                 <li>Les pions traînés au dernier rang sont promus au pion de votre choix. Utilisez la liste déroulante en bas à gauche de votre interface pour le définir.</li>
@@ -35,11 +37,13 @@
             </select>
         </main>
         <script>
+
             var echiquier;
 
             window.addEventListener('DOMContentLoaded', (e)=>{
                 echiquier = new Echiquier();
                 echiquier.afficher("échiquier");
+                echiquier.initialiserPartie();
             
             })
         </script><br><br>
