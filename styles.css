@@ -10,21 +10,21 @@
 
 td[data-couleur=blanc]{
 	background-color: rgb(214,208,201);
-	
+	/*#a9a9a9*/
 }
 
 td[data-couleur=noir]{
 	background-color: rgb(87,79,95);
-	
+	/*#696969;*/
 }
 
-.piece{
+.piece {
 	font-family: 'cheq7';
 	font-size: 40px;
 }
 
-[data-span-piece-couleur="B"]{
-	color: white;
+#piece_B_mangee .piece, #piece_N_mangee .piece{
+	font-size: 20px; 
 }
 
 #piece_B_mangee , #piece_N_mangee {
@@ -39,16 +39,13 @@ td[data-couleur=noir]{
 }
 
 #piece_N_mangee{
+	/*background-color: white;*/
 	background-color:  rgb(214,208,201);
 }
 
 #piece_B_mangee{
+	/*background-color: #696969;*/
 	background-color: rgb(87,79,95);
-}
-
-i.fa.fa-trophy{
-	font-size: 30px;
-	color: #CD853F;
 }
 
 main {
@@ -65,10 +62,22 @@ body{
 	background-color: #DCDCDC;	
 }
 
+i.fa.fa-trophy {
+	font-size: 30px;
+	color: #CD853F;
+}
+
 table#échiquier{
 	border: 10px solid rgb(195,142,121);
 }
 
+[data-span-piece-couleur="B"]{
+	color: white;
+}
 
+button{
+	background: linear-gradient(rgb(133,133,133),rgb(18,18,18));
+	padding: 8px;
+	color: white;
 
-
+}
