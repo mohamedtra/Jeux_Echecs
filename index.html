@@ -13,15 +13,16 @@
             <link rel="stylesheet" href="./font-awesome-4.7.0\css/font-awesome.min.css">   
             <h1 class="titre">Titan Echecs</h1><br>
             <button type="button" id="newgame">Nouvelle Partie</button>
+            <button type="button" id="loadgame">Charger dernière Partie</button>
             <p id="alerte"></p>
-            <label>Joueur 2 : </label>
+            <label id="bk">Joueur 2 : </label>
             <i class="fa fa-trophy" aria-hidden="true"></i>
             <div id="piece_B_mangee"></div>
             <table summary="échiquier" id="échiquier" border="0">
             </table>
 
             <div id="piece_N_mangee"></div>
-            <label>Joueur 1 :</label>
+            <label id="bk">Joueur 1 :</label>
             <i class="fa fa-trophy" aria-hidden="true"></i>
             <ul>
                 <li>Les déplacements peuvent être effectués en cliquant sur la pièce de départ puis sur la case d'arrivée.</li>
@@ -44,10 +45,23 @@
                 echiquier = new Echiquier();
                 echiquier.afficher("échiquier");
                 echiquier.initialiserPartie();
-            
-            });
 
+                document.getElementById("newgame").addEventListener("click",(en)=>{
+                    echiquier = new Echiquier();
+                    echiquier.afficher("échiquier");
+                    echiquier.initialiserPartie();
+                });
+
+                document.getElementById('loadgame').addEventListener("click",(el)=>{
+                    echiquier.chargerEtatPartie();
+                });
+
+                window.addEventListener("unload", (eu)=>{
+                    echiquier.sauvegarderEtatPartie();
             
+                });
+            }); 
         </script><br><br>
-    </body>        
+    </body>
+
 </html>

@@ -315,9 +315,101 @@ class Echiquier {
 
         });
         return perdu;
-    }     
+    }
+
+    /* methode alerteEchec*/
+
+    alerte(message){
+        var alertP = document.getElementById("alerte");
+        alertP.innerHTML=message;
+        window.setTimeout(()=>{
+            alertP.innerHTML="";
+        }, 3000);
+        var s = new SpeechSynthesisUtterance(message);
+        window.speechSynthesis.speak(s);
+    }
+
+    // methode qui permet de sauvegarder  l'etat d'une partie dans le localStorage
+
+    sauvegarderEtatPartie(){
+        var listeTdPieces = document.querySelectorAll('[data-piece-type]');
+        var pieceListe=[];
+        listeTdPieces.forEach((td, ind)=>{
+            var p = new Object();
+            p.piecetype=td.getAttribute('data-piece-type');
+            p.piececolor=td.getAttribute('data-piece-couleur');
+            p.ligne=td.getAttribute('data-ligne');
+            p.colonne=td.getAttribute('data-colonne');
+            pieceListe.push(p);
+
+        });
+        localStorage.piecesMorts=JSON.stringify([]);
+        this.sauvegarderCimetiere("piece_B_mangee");
+        this.sauvegarderCimetiere("piece_N_mangee");
+        localStorage.etatPartie= JSON.stringify(pieceListe); // stringify : convertir un Objet en string
+    }
+
+
+
+    // methode qui charge une partie sauvegardée
+    chargerEtatPartie(){
+        if(!(localStorage.etatPartie)) return;
+        this.viderEchiquier();
+        var etatPartie=JSON.parse(localStorage.etatPartie); // JSON.parse : convertir un string en Objet
+        etatPartie.forEach((infoPiece, ind)=>{
+            var tdPiece = this.cell(infoPiece.ligne, infoPiece.colonne);
+            var p = new Piece(infoPiece.piecetype,infoPiece.piececolor);
+            p.ajoutDansTd(tdPiece);
+        });
+        var cimetiere_Blanc=document.getElementById("piece_B_mangee");
+        var cimetiere_Noir=document.getElementById("piece_N_mangee");
+        cimetiere_Blanc.innerHTML="";
+        cimetiere_Noir.innerHTML="";
+        var piecesMortsSauvegardes=JSON.parse(localStorage.piecesMorts);
+        piecesMortsSauvegardes.forEach((pms,ind)=>{
+            var p = new Piece(pms.piecetype,pms.piececouleur);
+            if(p.couleur=="B"){
+                cimetiere_Blanc.innerHTML+=p.toString();
+            }else{
+                cimetiere_Noir.innerHTML+=p.toString();
+            }
+        });
+    }
+
+
+    // methode pour vider l'echiquier
+    viderEchiquier(){
+        var toutTd = document.querySelectorAll('[data-ligne][data-colonne]');
+        toutTd.forEach((td, ind)=>{
+            td.removeAttribute("data-piece-type");
+            td.removeAttribute("data-piece-couleur");
+            td.innerHTML="";
+
+        });
+    }
+
+    // methode qui sauvegarde un cimetiere dont l'id est passer en paramètre
+    sauvegarderCimetiere(idCimetiere){
+        var piecesMorts= document.querySelectorAll('#' +idCimetiere+ ' span[data-span-piece-type][data-span-piece-couleur]');
+        var piecesMortsSauvegardes = JSON.parse(localStorage.piecesMorts);
+        piecesMorts.forEach((pm, ind)=>{
+            var pieceMortInfo= new Object();
+            pieceMortInfo.piecetype=pm.getAttribute('data-span-piece-type');
+            pieceMortInfo.piececouleur=pm.getAttribute('data-span-piece-couleur');
+            
+            piecesMortsSauvegardes.push(pieceMortInfo);
+
+
+        });
+        localStorage.piecesMorts=JSON.stringify(piecesMortsSauvegardes);
+
+    }    
 
 } // ******fermeture de la classe Echiquier*******
+
+
+
+
 
 
 

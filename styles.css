@@ -54,12 +54,37 @@ main {
 	
 }
 
+#bk{
+	color: #FFFACD;
+	font-size: 40px;
+}
+#alerte{
+	font-size: 20px;
+	color: #FFFACD;
+
+}
+
+.titre {
+	color: #FFFACD;
+	font-size: 40px;
+}
+
 h1{
 	text-align: center;
 }
 
+h3{
+	color: #FFFACD;
+}
+
 body{
-	background-color: #DCDCDC;	
+	background-color: #DCDCDC;
+	background-image:url(./je.jpg);	
+}
+
+li {
+	color: #FFFACD;
+	text-shadow:0 0 3px #FFFF00;
 }
 
 i.fa.fa-trophy {
