@@ -6,6 +6,11 @@ TRAORE Mohamed
 Lys Ciella Niteka.
 
 
+Lien vers notre jeu :
+
+https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.kamel-bourek.fr%2Fjeuxdechecs%2FJeux_Echecs%2Findex.html%3Ffbclid%3DIwAR17FFzuaVX0s73k_-V6AGDExGj7etETrOUf-pbDxEni9DWKoiNYo3s7xQQ&h=AT1ZTBJXxGdf7CuZPmKGOLlMl8Nc_VegIu8W-cVh0P3hf-dMvLt1xl53xO8pWvhcBzZ-cK46unn0YXhzQVM2H7x3D6F-wX_jYaf2Ac1EH6gi2zDqoe3ZBxj1Nnvw_A
+
+
 
 ***Introduction***
 
@@ -25,3 +30,6 @@ déroulante.
 * Un bouton qui permet de lancer une nouvelle partie.
 * Un bouton qui permet de récupérer une partie non terminée dans son état
 où elle a été laissée grâce au Local Storage.
+
+
+

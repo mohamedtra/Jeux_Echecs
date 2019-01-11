@@ -91,7 +91,8 @@ class Echiquier {
 
                             }
 
-                            Piece.deplacerUneCase(tdOrigne,tdCliquee);
+                           Piece.deplacerUneCase(tdOrigne,tdCliquee);
+                           //Piece.draggable(tdOrigne,tdCliquee);
 
                             var coupEstIlLegal= this.roiEstEnEchec(this.tour);
                             if(coupEstIlLegal){
